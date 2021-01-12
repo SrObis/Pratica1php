@@ -1,0 +1,12 @@
+Explicacion de las carpetas que forman parte del trabajo de practica 1PHP de Jordi Obis
+
+1-archivos: contienen todas las imagenens de los productos agregados
+2-bd:Carpeta que contiene los Snippet (pequeñas partes reusables de código fuente) 
+     o querys (interacción con una base de datos.) de la bd listos para ejecutar.
+3-clases: contiene todas las clases de cada modulo, con sus respectivos metodos de crud.
+4-css: contiene los scripts css que serciran para dar estilo personalizado en caso de ser necesario.
+5-img: contiene todas las imagenes que necesitamos agregar a nuestras vistas.
+6-js: contiene todos los scripts js de cada modulo para ejecutar las funciones de crud (Crear, Leer, Actualizar y Borrar").
+7-libreruas: contendra librerias para la creiacion de pdf,jquery, alertify, bootstap, select 2...
+8-preoceso:contiene archivos intermedios entre las clases y las vistas, estos madaran informacion entre una y otra cosa.
+9-vistas: contendra las vistas de cada uno de los modulos.
