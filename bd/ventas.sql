@@ -12,7 +12,7 @@ create table usuarios( --tabla usuaarios
 				primary key(id_usuario)
 					);
 
-create table categorias (
+create table categorias ( --Categorias de los productos
 				id_categoria int auto_increment,
 				id_usuario int not null, --para ver que usuario ha agregado la categoria
 				nombreCategoria varchar(150),
@@ -30,6 +30,7 @@ create table imagenes(--cada producto tiene una imagen por loque se necesitara u
 				fechaSubida date,
 				primary key(id_imagen)
 				);
+				
 create table articulos(
 				id_producto int auto_increment,
 				id_categoria int not null,
@@ -55,6 +56,7 @@ create table clientes(
 				rfc varchar(200),
 				primary key(id_cliente)
 				);
+
 create table ventas(
 				id_venta int not null,
 				id_cliente int,

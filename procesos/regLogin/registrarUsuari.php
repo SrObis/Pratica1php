@@ -5,7 +5,7 @@
     $obj=new usuarios();
 
    
-    $pass=shal($_POST['password']);//encriptado de la contraseña
+    $pass=sha1($_POST['password']);//encriptado de la contraseña https://md5decrypt.net/en/Sha1/
     
     $datos=array(
             $_POST['nombre'],

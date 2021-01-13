@@ -4,6 +4,8 @@
     <title>Login usuario</title>
     <link rel="stlesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
     <script src="librerias/jquery-3.2.1.min.js"></script>
+    <script src="js/funciones.js"></script>
+
 </head>
 <body style="background-color: gray;">
     <br><br><br>
@@ -25,7 +27,7 @@
                             <label>Password</label>
                             <input type="password" class="form-control input-sm" name="password" id="password"></input>
                             <p></p>
-                            <span class="btn btn-primary btn-sm">Entrar</span>
+                            <span class="btn btn-primary btn-sm" id="entrarSistema">Entrar</span>
                             <a href="registro.php" class="btn btn-danger btn-sm">Registrar</a>
                         </form>
                     </div>
@@ -38,3 +40,34 @@
 
 </body>
 </html>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+       	//script para evento click y ajax 
+        $('#entrarSistema').click(function(){
+
+            vacios=validarFormVacio('frmLogin');
+            if(vacios>0){//no puede haber ningun campo bacio
+                    alert("Todos los campos tienes que estar llenos, no puede haber ninguno vacio");
+                    return false;
+                }                       
+        datos=$('#frmLogin').serialize();
+        $.ajax({
+            type:"POST",
+            data:datos,
+            url:"procesos/regLogin/login.php",
+            success:function(r){
+                if(r==1){
+                    window.location="vistas/inicio.php":
+
+                }else{
+                    alert("No se puede aceder")
+                }
+            }
+        });
+        });
+    });
+
+</script>
