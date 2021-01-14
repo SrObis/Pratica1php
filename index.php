@@ -1,3 +1,19 @@
+<?
+
+    require_once "clases/Conexion.php";
+    $obj= new conectar();
+    $conexion=$obj->conexion();
+    //Estamos buscando que en la bd haya almenos un admin
+    $sql="SELECT * from usuarios where email='admin' ";
+    $result=mysqli_query($conexion,$sql);
+    $validar=0;
+    if (mysql_num_rows($result)>0){
+        $validar=1;
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html> 
 <head>
@@ -28,7 +44,11 @@
                             <input type="password" class="form-control input-sm" name="password" id="password"></input>
                             <p></p>
                             <span class="btn btn-primary btn-sm" id="entrarSistema">Entrar</span>
+                            <?php  if(!$validar): ?> <!-- Si no es ardadero que muestre registrar, osea si hay un admin que no salga -->
                             <a href="registro.php" class="btn btn-danger btn-sm">Registrar</a>
+                            
+                            <?php endif; ?>
+
                         </form>
                     </div>
                 </div>
@@ -60,7 +80,7 @@
             url:"procesos/regLogin/login.php",
             success:function(r){
                 if(r==1){
-                    window.location="vistas/inicio.php":
+                    window.location="vistas/inicio.php";
 
                 }else{
                     alert("No se puede aceder")

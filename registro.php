@@ -1,4 +1,19 @@
-!DOCTYPE html>
+<?
+    // esto es lo mismo que en index aqui se pone porque desde la barra del navegador 
+    // se puede entrer hasta aqui de esta manera lo redirige hacia el index
+    require_once "clases/Conexion.php";
+    $obj= new conectar();
+    $conexion=$obj->conexion();
+    $sql="SELECT * from usuarios where email='admin' ";
+    $result=mysqli_query($conexion,$sql);
+    $validar=0;
+    if (mysql_num_rows($result)>0){
+        header("location:index.php");
+    }
+
+?>
+
+<!DOCTYPE html>
 <html> 
 <head>
     <title>registro</title>
