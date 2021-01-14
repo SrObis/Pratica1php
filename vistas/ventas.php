@@ -9,7 +9,7 @@
 
 <html>
 <head>
-    <title>inicio</title>
+    <title>ventas</title>
     <?php require_once "menu.php"; ?> <!-- Con esto ponenos la navbar-->
 
 </head>
