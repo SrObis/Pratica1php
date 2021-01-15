@@ -13,6 +13,7 @@ Si no se ha registrado no se podra hacerder a ninguna parte funcional de la web 
 Version responib para mobil
 Se puede agregar, editar y borrar una categoria desde la pagina
 En articulos puedes poner el nombre, descripcion, cantidad, precio, una imagen del pc, tabien puedes eliminar i borrar
+El administrador podra editar los usuarios, el nombre, apellido i nick pero no la contraseña, tampoco la puede ver.
 
 
 Se ha usado Workbench para hacer la conexion local.

@@ -32,21 +32,21 @@
                     <div class="panel panel-heading">Registrar Administrador</div>
                     <div class="panel panel-body">
                         <form id=frmRegistro>
-                        <label>Nombre</label>
-                        <input type="text" class="form-control input-sm" name="nombre" id="nombre">
-                        
-                        <label>Apellido</label>
-                        <input type="text" class="form-control input-sm" name="apellido" id="apellido">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control input-sm" name="nombre" id="nombre">
+                            
+                            <label>Apellido</label>
+                            <input type="text" class="form-control input-sm" name="apellido" id="apellido">
 
-                        <label>Usuario</label>
-                        <input type="text" class="form-control input-sm" name="usuario" id="usuario">
+                            <label>Usuario</label>
+                            <input type="text" class="form-control input-sm" name="usuario" id="usuario">
 
-                        <label>Password</label>
-                        <input type="text" class="form-control input-sm" name="password" id="password">
-                        
-                        <p></p>
-                        <span class="btn btn-primary" id="registro">Registrar</span>
-                        <a href="index.php" class="btn btn-default">Regresar Login</a>
+                            <label>Password</label>
+                            <input type="text" class="form-control input-sm" name="password" id="password">
+                            
+                            <p></p>
+                            <span class="btn btn-primary" id="registro">Registrar</span>
+                            <a href="index.php" class="btn btn-default">Regresar Login</a>
 
 
                         </form>
