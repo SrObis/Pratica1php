@@ -15,6 +15,7 @@
 </head>
 <body>
         <div class="container">
+            <h1>CATEGORIAS</h1>
             <div class="row">
                 <div class="col-sm-4">
                     <form>

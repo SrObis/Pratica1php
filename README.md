@@ -12,4 +12,7 @@ Navbar pegajosa (se mantiene fija arriba y nunca desaparece).
 Si no se ha registrado no se podra hacerder a ninguna parte funcional de la web (articulos,categorias,clientes,usuarios,ventas).
 Version responib para mobil
 Se puede agregar, editar y borrar una categoria desde la pagina
+
+
+
 Se ha usado Workbench para hacer la conexion local.

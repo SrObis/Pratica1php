@@ -1,4 +1,4 @@
-function validarFormVacio(formulario){
+function validarFormVacio(formulario){//funcion referente a los selects
     datos=$('#' + formulario).serialize();
     d=datos.split('&');
     vacios=0;
