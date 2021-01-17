@@ -20,11 +20,11 @@
 	</tr>
 
 	<?php
-	while ($ver=mysqli_fetch_row($result)):
+	while ($ver=mysqli_fetch_row($result))://printamos el resoult del select
 	 ?>
 
 	<tr>
-		<td><?php echo $ver[1] ?></td>
+		<td><?php echo $ver[1] ?></td> <!--  mostramos el 1 porque el 0 es id_categoria-->
 		<td>
 			<span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#actualizaCategoria" onclick="agregaDato('<?php echo $ver[0] ?>','<?php echo $ver[1] ?>')">
 				<span class="glyphicon glyphicon-pencil"></span>
