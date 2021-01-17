@@ -34,34 +34,90 @@
 </body>
 </html>
 <script type="text/javascript">
-    $(document).ready(function(){
-        $('tablaCategoriaLoad').load("categorias/tablaCategoria.php");
-       //script para evento click y ajax 
-        $('#btnAgregaCategoria').click(function(){
+		$(document).ready(function(){
+
+			$('#tablaCategoriaLoad').load("categorias/tablaCategorias.php");
+     		  //script para evento click y ajax 
+
+			$('#btnAgregaCategoria').click(function(){
              //quanado de click que vaya a la funcion validar
-             vacios=validarFormVacio('frmCategorias');
-                if(vacios>0){//no puede haber ningun campo bacio
-                    alertify.alert("Todos los campos tienes que estar llenos, no puede haber ninguno vacio");
-                    return false;
-                }
 
-            datos=$('#frmCategorias').serialize();
-            $.ajax({
-                type:"POST",
-                data:datos,
-                url:"../procesos/categorias/agregarCategoria.php",
-                success:function(r){
-                    if(r==1){
-                        alertify.success("Categoria agregada con exito");
-                    }else{
-                        alertify.error("No se pudo agregar la categoria");
-                    }
-                }
-            });
-        }); 
-    });
-</script>
+				vacios=validarFormVacio('frmCategorias');
 
+				if(vacios > 0){//no puede haber ningun campo bacio
+					alertify.alert("Debes llenar todos los campos!!");
+					return false;
+				}
+
+				datos=$('#frmCategorias').serialize();
+				$.ajax({
+					type:"POST",
+					data:datos,
+					url:"../procesos/categorias/agregaCategoria.php",
+					success:function(r){
+						if(r==1){
+					//esta linea nos permite limpiar el formulario al insetar un registro
+					$('#frmCategorias')[0].reset();
+
+					$('#tablaCategoriaLoad').load("categorias/tablaCategorias.php");
+					alertify.success("Categoria agregada con exito :D");
+				}else{
+					alertify.error("No se pudo agregar categoria");
+				}
+			}
+		});
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#btnActualizaCategoria').click(function(){
+
+				datos=$('#frmCategoriaU').serialize();
+				$.ajax({
+					type:"POST",
+					data:datos,
+					url:"../procesos/categorias/actualizaCategoria.php",
+					success:function(r){
+						if(r==1){
+							$('#tablaCategoriaLoad').load("categorias/tablaCategorias.php");
+							alertify.success("Actualizado con exito :)");
+						}else{
+							alertify.error("no se pudo actaulizar :(");
+						}
+					}
+				});
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		function agregaDato(idCategoria,categoria){
+			$('#idcategoria').val(idCategoria);
+			$('#categoriaU').val(categoria);
+		}
+
+		function eliminaCategoria(idcategoria){
+			alertify.confirm('¿Desea eliminar esta categoria?', function(){ 
+				$.ajax({
+					type:"POST",
+					data:"idcategoria=" + idcategoria,
+					url:"../procesos/categorias/eliminarCategoria.php",
+					success:function(r){
+						if(r==1){
+							$('#tablaCategoriaLoad').load("categorias/tablaCategorias.php");
+							alertify.success("Eliminado con exito!!");
+						}else{
+							alertify.error("No se pudo eliminar :(");
+						}
+					}
+				});
+			}, function(){ 
+				alertify.error('Cancelo !')
+			});
+		}
+	</script>
 
 <?php 
 
