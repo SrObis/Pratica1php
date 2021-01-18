@@ -17,7 +17,3 @@ En articulos puedes poner el nombre, descripcion, cantidad, precio, una imagen d
 
 
 Se ha usado Workbench para hacer la conexion local.
-
-
-
->>>>>>> Stashed changes
