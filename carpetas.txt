@@ -10,3 +10,8 @@ Explicacion de las carpetas que forman parte del trabajo de practica 1PHP de Jor
 7-libreruas: contendra librerias para la creiacion de pdf,jquery, alertify, bootstap, select 2...
 8-preoceso:contiene archivos intermedios entre las clases y las vistas, estos madaran informacion entre una y otra cosa.
 9-vistas: contendra las vistas de cada uno de los modulos.
+
+
+
+
+

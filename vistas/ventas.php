@@ -18,7 +18,7 @@
 		 <div class="row">
 		 	<div class="col-sm-12">
 		 		<span class="btn btn-default" id="ventaProductosBtn">Vender producto</span>
-		 		<span class="btn btn-default" id="ventasHechasBtn">Ventas Realizadas</span>
+		 		<span class="btn btn-default" id="ventasHechasBtn">Ventas hechas</span>
 		 	</div>
 		 </div>
 		 <div class="row">
@@ -31,11 +31,12 @@
 </body>
 </html>
 	
-    <script type="text/javascript">
-    //quando se clicke en alguna secion lo que va ha cer es:
+	<script type="text/javascript">
+	//quando se clicke en alguna secion lo que va ha cer es:
     //esconder las seciones -->esconderSeccionVenta();
     //la va a cargar -->$('#ventaProductos').load(...
     //y por ultimo mostrara la parte que nos interesa $('#ventaProductos').show();/$('#ventasHechas').show();
+		
 		$(document).ready(function(){
 			$('#ventaProductosBtn').click(function(){//Click venta prductos
 				esconderSeccionVenta();

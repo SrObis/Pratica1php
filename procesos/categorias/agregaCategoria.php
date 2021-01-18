@@ -17,4 +17,5 @@
 	echo $obj->agregaCategoria($datos);//llammamos al metodo cagregaCategoria
 
 
+
  ?>

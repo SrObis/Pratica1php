@@ -1,4 +1,4 @@
-
+//Trozos de codigo para ir rapido
 
 //menu de cabecera 
 https://bootsnipp.com/snippets/Kr5yV

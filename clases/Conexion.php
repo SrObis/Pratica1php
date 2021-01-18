@@ -7,7 +7,7 @@
         private $bd="ventas";
 
         public function conexion(){
-            $conein=mysqli_connect($this->servidor,
+            $conexion=mysqli_connect($this->servidor,
                                     $this->usuario,
                                     $this->password,
                                     $this->bd);
@@ -15,9 +15,5 @@
         }
     }
 
-    $obj= new conectar();
-    var_dump($obj->conexion());
-    if($obj->conexion()){
-        echo "conectado";//para saber si los parametros son corectos y se conecta
-    }
+    
 ?>

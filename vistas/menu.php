@@ -1,12 +1,16 @@
+
+<?php require_once "dependencias.php" ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>VENTAS Y ALMACEN</title>
-    <?php require_once "dependencias.php"; ?>
+  <title></title>
 </head>
 <body>
         <!--https://bootsnipp.com/snippets/Kr5yV plantilla de la navbar -->
-        <div id="nav">
+
+  <!-- Begin Navbar -->
+  <div id="nav">
     <div class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="100">
       <div class="container">
         <div class="navbar-header">
@@ -70,22 +74,23 @@
 
 
 
-
-        
         <!-- fin de la plantilla -->    
+
+<!-- /container -->        
+
 
 </body>
 </html>
 
 <script type="text/javascript">
-    $(window).scroll(function() {
-                if ($(document).scrollTop() > 150) {
-                    alert('hi');
-                $('.logo').height(200);
+  $(window).scroll(function() {
+    if ($(document).scrollTop() > 150) {
+      $('.logo').height(200);
 
-                }
-                else {
-                $('.logo').height(100);
-                }
-            });
+    }
+    else {
+      $('.logo').height(100);
+    }
+  }
+  );
 </script>
