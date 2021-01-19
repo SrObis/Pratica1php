@@ -5,13 +5,13 @@
     $obj=new usuarios();
 
    
-    $pass=sha1($_POST['password']);//encriptado de la contraseña https://md5decrypt.net/en/Sha1/
+    $pass=sha1($_POST['password']);
     
     $datos=array(
             $_POST['nombre'],
             $_POST['apellido'],
             $_POST['usuario'], 
-            $pass//contraseña encriptada
+            $pass
         );
     echo $obj->registroUsuario($datos);
 ?>
