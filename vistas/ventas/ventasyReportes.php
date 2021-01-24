@@ -9,7 +9,6 @@
 	$obj= new ventas();
 
 	$sql="SELECT id_venta,
-				fechaCompra,
 				id_cliente 
 			from ventas group by id_venta";
 	$result=mysqli_query($conexion,$sql); 
@@ -24,7 +23,6 @@
 				<caption><label>Ventas</label></caption>
 				<tr>
 					<td>Folio</td>
-					<td>Fecha</td>
 					<td>Cliente</td>
 					<td>Total de compra</td>
 					<td>Ticket</td>

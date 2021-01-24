@@ -7,18 +7,15 @@
 			$c=new conectar();
 			$conexion=$c->conexion();
 
-			$fecha=date('Y-m-d');
-
+			
 			$sql="INSERT into usuarios (nombre,
 								apellido,
 								email,
-								password,
-								fechaCaptura)
+								password)
 						values ('$datos[0]',
 								'$datos[1]',
 								'$datos[2]',
-								'$datos[3]',
-								'$fecha')";
+								'$datos[3]')";
 			return mysqli_query($conexion,$sql);
 		}
 		public function loginUser($datos){

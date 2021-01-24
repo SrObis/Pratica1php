@@ -10,8 +10,8 @@ class categorias{
 		$conexion=$c->conexion();
 		//funcion sql
 		$sql="INSERT into categorias(id_usuario,
-									nombreCategoria,
-									fechaCaptura)
+									nombreCategoria
+									)
 					values ('$datos[0]',
 							'$datos[1]',
 							'$datos[2]')";

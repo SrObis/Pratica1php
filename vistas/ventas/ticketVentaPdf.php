@@ -10,7 +10,6 @@
 	$idventa=$_GET['idventa'];
 
  $sql="SELECT ve.id_venta,
-		ve.fechaCompra,
 		ve.id_cliente,
 		art.nombre,
         art.precio,
@@ -25,7 +24,6 @@ $result=mysqli_query($conexion,$sql);
 	$ver=mysqli_fetch_row($result);
 
 	$folio=$ver[0];
-	$fecha=$ver[1];
 	$idcliente=$ver[2];
 
  ?>	
@@ -47,10 +45,8 @@ $result=mysqli_query($conexion,$sql);
 
  </head>
  <body>
- 		<p>Facultad autodidacta</p>
- 		<p>
- 			Fecha: <?php echo $fecha; ?>
- 		</p>
+ 		<p>Texto no se que poner</p>
+ 	
  		<p>
  			Folio: <?php echo $folio ?>
  		</p>
@@ -65,7 +61,6 @@ $result=mysqli_query($conexion,$sql);
  			</tr>
  			<?php 
  				$sql="SELECT ve.id_venta,
-							ve.fechaCompra,
 							ve.id_cliente,
 							art.nombre,
 					        art.precio,

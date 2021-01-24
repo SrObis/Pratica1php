@@ -8,7 +8,6 @@ create table usuarios( #tabla usuaarios
 				apellido varchar(50),
 				email varchar(50),
 				password text(50),
-				fechaCaptura date, #la fechaCaptura es para si en el futuro se quiere hacer alguna estadisticas
 				primary key(id_usuario)
 					);
 
@@ -16,7 +15,6 @@ create table categorias ( #Categorias de los productos
 				id_categoria int auto_increment,
 				id_usuario int not null, #para ver que usuario ha agregado la categoria
 				nombreCategoria varchar(150),
-				fechaCaptura date,
 				primary key(id_categoria)
 				);
 
@@ -26,8 +24,7 @@ create table imagenes(#cada producto tiene una imagen por loque se necesitara un
 				id_imagen int auto_increment,
 				id_categoria int not null,
 				nombre varchar(500),
-				ruta varchar(500),
-				fechaSubida date,
+				ruta varchar(500)
 				primary key(id_imagen)
 				);
 				
@@ -40,7 +37,6 @@ create table articulos(
 				descripcion varchar(500),
 				cantidad int,
 				precio float,
-				fechaCaptura date,
 				primary key(id_producto)
 
 				);
@@ -62,6 +58,5 @@ create table ventas(
 				id_cliente int,
 				id_producto int,#quando agas una venta se quitara la cantidad del almacen(articulos,cantidad int)
 				id_usuario int,
-				precio float,
-				fechaCompra date
+				precio float				
 				);

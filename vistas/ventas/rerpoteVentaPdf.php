@@ -10,7 +10,6 @@
 	$idventa=$_GET['idventa'];
 
  $sql="SELECT ve.id_venta,
-		ve.fechaCompra,
 		ve.id_cliente,
 		art.nombre,
         art.precio,
@@ -25,7 +24,6 @@ $result=mysqli_query($conexion,$sql);
 	$ver=mysqli_fetch_row($result);
 
 	$folio=$ver[0];
-	$fecha=$ver[1];
 	$idcliente=$ver[2];
 
  ?>	
@@ -40,9 +38,7 @@ $result=mysqli_query($conexion,$sql);
  		<img src="../../img/ventas.jpg" width="200" height="200">
  		<br>
  		<table class="table">
- 			<tr>
- 				<td>Fecha: <?php echo $fecha; ?></td>
- 			</tr>
+ 				
  			<tr>
  				<td>Folio: <?php echo $folio ?></td>
  			</tr>
@@ -62,7 +58,6 @@ $result=mysqli_query($conexion,$sql);
 
  			<?php 
  			$sql="SELECT ve.id_venta,
-						ve.fechaCompra,
 						ve.id_cliente,
 						art.nombre,
 				        art.precio,

@@ -31,7 +31,7 @@
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4">
 				<div class="panel panel-danger">
-					<div class="panel panel-heading">Registrar Administrador</div>
+					<div class="panel panel-heading">Registrar Usuario</div>
 					<div class="panel panel-body">
 						<form id="frmRegistro">
 							<label>Nombre</label>
