@@ -27,7 +27,10 @@ create table imagenes(--cada producto tiene una imagen por loque se necesitara u
 				id_categoria int not null,
 				nombre varchar(500),
 				ruta varchar(500),
+<<<<<<< Updated upstream
 				fechaSubida date,
+=======
+>>>>>>> Stashed changes
 				primary key(id_imagen)
 				);
 				
