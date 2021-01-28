@@ -1,7 +1,6 @@
 <?php 
 session_start();
-if(isset($_SESSION['usuario'])){//que nos lo muestre si esta la secion avierta
-
+if(isset($_SESSION['usuario'])){
 
 	?>
 
@@ -10,8 +9,7 @@ if(isset($_SESSION['usuario'])){//que nos lo muestre si esta la secion avierta
 	<html>
 	<head>
 		<title>categorias</title>
-		<?php require_once "menu.php"; ?> <!-- Con esto ponenos la navbar-->
-
+		<?php require_once "menu.php"; ?>
 	</head>
 	<body>
 
@@ -65,14 +63,12 @@ if(isset($_SESSION['usuario'])){//que nos lo muestre si esta la secion avierta
 		$(document).ready(function(){
 
 			$('#tablaCategoriaLoad').load("categorias/tablaCategorias.php");
-     		  //script para evento click y ajax 
 
 			$('#btnAgregaCategoria').click(function(){
-             //quanado de click que vaya a la funcion validar
 
 				vacios=validarFormVacio('frmCategorias');
 
-				if(vacios > 0){//no puede haber ningun campo bacio
+				if(vacios > 0){
 					alertify.alert("Debes llenar todos los campos!!");
 					return false;
 				}

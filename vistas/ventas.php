@@ -32,25 +32,20 @@
 </html>
 	
 	<script type="text/javascript">
-	//quando se clicke en alguna secion lo que va ha cer es:
-    //esconder las seciones -->esconderSeccionVenta();
-    //la va a cargar -->$('#ventaProductos').load(...
-    //y por ultimo mostrara la parte que nos interesa $('#ventaProductos').show();/$('#ventasHechas').show();
-		
 		$(document).ready(function(){
-			$('#ventaProductosBtn').click(function(){//Click venta prductos
+			$('#ventaProductosBtn').click(function(){
 				esconderSeccionVenta();
 				$('#ventaProductos').load('ventas/ventasDeProductos.php');
 				$('#ventaProductos').show();
 			});
-			$('#ventasHechasBtn').click(function(){//clickventas hecahas
+			$('#ventasHechasBtn').click(function(){
 				esconderSeccionVenta();
 				$('#ventasHechas').load('ventas/ventasyReportes.php');
 				$('#ventasHechas').show();
 			});
 		});
 
-		function esconderSeccionVenta(){//para que quando muestre uno se esconda el otro
+		function esconderSeccionVenta(){
 			$('#ventaProductos').hide();
 			$('#ventasHechas').hide();
 		}

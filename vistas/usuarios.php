@@ -1,17 +1,18 @@
-<?php 
+<?php
 session_start();
-if(isset($_SESSION['usuario']) and $_SESSION['usuario']=='admin'){//que nos lo muestre si esta la secion avierta
-            
-	?>
+if (isset($_SESSION['usuario']) and $_SESSION['usuario'] == 'admin') {
+?>
 	<!DOCTYPE html>
 	<html>
+
 	<head>
 		<title>usuarios</title>
-		<?php require_once "menu.php"; ?> <!-- Con esto ponenos la navbar-->
+		<?php require_once "menu.php"; ?>
 	</head>
+
 	<body>
 		<div class="container">
-			<h1>Administrar usuarios</h1>
+			<h1>Administrar admins</h1>
 			<div class="row">
 				<div class="col-sm-4">
 					<form id="frmRegistro">
@@ -67,17 +68,18 @@ if(isset($_SESSION['usuario']) and $_SESSION['usuario']=='admin'){//que nos lo m
 		</div>
 
 	</body>
+
 	</html>
 
 	<script type="text/javascript">
-		function agregaDatosUsuario(idusuario){
+		function agregaDatosUsuario(idusuario) {
 
 			$.ajax({
-				type:"POST",
-				data:"idusuario=" + idusuario,
-				url:"../procesos/usuarios/obtenDatosUsuario.php",
-				success:function(r){
-					dato=jQuery.parseJSON(r);
+				type: "POST",
+				data: "idusuario=" + idusuario,
+				url: "../procesos/usuarios/obtenDatosUsuario.php",
+				success: function(r) {
+					dato = jQuery.parseJSON(r);
 
 					$('#idUsuario').val(dato['id_usuario']);
 					$('#nombreU').val(dato['nombre']);
@@ -87,45 +89,43 @@ if(isset($_SESSION['usuario']) and $_SESSION['usuario']=='admin'){//que nos lo m
 			});
 		}
 
-		function eliminarUsuario(idusuario){
-			alertify.confirm('¿Desea eliminar este usuario?', function(){ 
+		function eliminarUsuario(idusuario) {
+			alertify.confirm('¿Desea eliminar este usuario?', function() {
 				$.ajax({
-					type:"POST",
-					data:"idusuario=" + idusuario,
-					url:"../procesos/usuarios/eliminarUsuario.php",
-					success:function(r){
-						if(r==1){
+					type: "POST",
+					data: "idusuario=" + idusuario,
+					url: "../procesos/usuarios/eliminarUsuario.php",
+					success: function(r) {
+						if (r == 1) {
 							$('#tablaUsuariosLoad').load('usuarios/tablaUsuarios.php');
 							alertify.success("Eliminado con exito!!");
-						}else{
+						} else {
 							alertify.error("No se pudo eliminar :(");
 						}
 					}
 				});
-			}, function(){ 
+			}, function() {
 				alertify.error('Cancelo !')
 			});
 		}
-
-
 	</script>
 
 	<script type="text/javascript">
-		$(document).ready(function(){
-			$('#btnActualizaUsuario').click(function(){
+		$(document).ready(function() {
+			$('#btnActualizaUsuario').click(function() {
 
-				datos=$('#frmRegistroU').serialize();
+				datos = $('#frmRegistroU').serialize();
 				$.ajax({
-					type:"POST",
-					data:datos,
-					url:"../procesos/usuarios/actualizaUsuario.php",
-					success:function(r){
+					type: "POST",
+					data: datos,
+					url: "../procesos/usuarios/actualizaUsuario.php",
+					success: function(r) {
 
-						if(r==1){
+						if (r == 1) {
 							$('#tablaUsuariosLoad').load('usuarios/tablaUsuarios.php');
-							alertify.success("Actualizado con exito ");
-						}else{
-							alertify.error("No se pudo actualizar ");
+							alertify.success("Actualizado con exito :D");
+						} else {
+							alertify.error("No se pudo actualizar :(");
 						}
 					}
 				});
@@ -134,34 +134,33 @@ if(isset($_SESSION['usuario']) and $_SESSION['usuario']=='admin'){//que nos lo m
 	</script>
 
 	<script type="text/javascript">
-		$(document).ready(function(){
+		$(document).ready(function() {
 
 			$('#tablaUsuariosLoad').load('usuarios/tablaUsuarios.php');
 
-			$('#registro').click(function(){
-            //quanado de click que vaya a la funcion validar
+			$('#registro').click(function() {
 
-				vacios=validarFormVacio('frmRegistro');
+				vacios = validarFormVacio('frmRegistro');
 
-				if(vacios > 0){
+				if (vacios > 0) {
 					alertify.alert("Debes llenar todos los campos!!");
 					return false;
 				}
 
-				datos=$('#frmRegistro').serialize();//serialize para crear tablas dinamicas
+				datos = $('#frmRegistro').serialize();
 				$.ajax({
-					type:"POST",
-					data:datos,
-					url:"../procesos/regLogin/registrarUsuario.php",
-					success:function(r){
+					type: "POST",
+					data: datos,
+					url: "../procesos/regLogin/registrarUsuario.php",
+					success: function(r) {
 						//alert(r);
 
-						if(r==1){
+						if (r == 1) {
 							$('#frmRegistro')[0].reset();
-							$('#tablaUsuariosLoad').load('usuarios/tablaUsuarios.php');//cada insert que se recarge la tabla
+							$('#tablaUsuariosLoad').load('usuarios/tablaUsuarios.php');
 							alertify.success("Agregado con exito");
-						}else{
-							alertify.error("Fallo al agregar ");
+						} else {
+							alertify.error("Fallo al agregar :(");
 						}
 					}
 				});
@@ -169,11 +168,8 @@ if(isset($_SESSION['usuario']) and $_SESSION['usuario']=='admin'){//que nos lo m
 		});
 	</script>
 
-<?php 
-
-    }else{//si no detecta secion que nos vaya a inicio
-        header("location:../index.php");//nos cambiamos desde la ruta
-
-    }
-
+<?php
+} else {
+	header("location:../index.php");
+}
 ?>

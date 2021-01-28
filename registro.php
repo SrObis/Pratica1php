@@ -1,22 +1,23 @@
-<?php 
-	// esto es lo mismo que en index aqui se pone porque desde la barra del navegador 
-    // se puede entrer hasta aqui de esta manera lo redirige hacia el index
-   
-	require_once "clases/Conexion.php";
-	$obj= new conectar();
-	$conexion=$obj->conexion();
+<?php
+// esto es lo mismo que en index aqui se pone porque desde la barra del navegador 
+// se puede entrer hasta aqui de esta manera lo redirige hacia el index
 
-	$sql="SELECT * from usuarios where email='admin'";
-	$result=mysqli_query($conexion,$sql);
-	$validar=0;
-	if(mysqli_num_rows($result) > 0){
-		header("location:index.php");
-	}
- ?>
+require_once "clases/Conexion.php";
+$obj = new conectar();
+$conexion = $obj->conexion();
+
+$sql = "SELECT * from usuarios where email='admin'";
+$result = mysqli_query($conexion, $sql);
+$validar = 0;
+if (mysqli_num_rows($result) > 0) {
+	header("location:index.php");
+}
+?>
 
 
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>registro</title>
 	<link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
@@ -24,6 +25,7 @@
 	<script src="js/funciones.js"></script>
 
 </head>
+
 <body style="background-color: gray">
 	<br><br><br>
 	<div class="container">
@@ -53,32 +55,33 @@
 		</div>
 	</div>
 </body>
+
 </html>
 
 <script type="text/javascript">
-	$(document).ready(function(){
-		$('#registro').click(function(){
-            //quanado de click que vaya a la funcion validar
+	$(document).ready(function() {
+		$('#registro').click(function() {
+			//quanado de click que vaya a la funcion validar
 
-			vacios=validarFormVacio('frmRegistro');
+			vacios = validarFormVacio('frmRegistro');
 
-			if(vacios>0){//no puede haber ningun campo bacio
+			if (vacios > 0) { //no puede haber ningun campo bacio
 				alert("Debes llenar todos los campos!!");
 				return false;
 			}
 
-			datos=$('#frmRegistro').serialize();//serialize para crear tablas dinamicas
-            
+			datos = $('#frmRegistro').serialize(); //serialize para crear tablas dinamicas
+
 			$.ajax({
-				type:"POST",
-				data:datos,
-				url:"procesos/regLogin/registrarUsuario.php",
-				success:function(r){
+				type: "POST",
+				data: datos,
+				url: "procesos/regLogin/registrarUsuario.php",
+				success: function(r) {
 					alert(r);
 
-					if(r==1){
+					if (r == 1) {
 						alert("Agregado con exito");
-					}else{
+					} else {
 						alert("Fallo al agregar :(");
 					}
 				}
@@ -86,4 +89,3 @@
 		});
 	});
 </script>
-

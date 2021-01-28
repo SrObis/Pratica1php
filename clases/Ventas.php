@@ -38,7 +38,6 @@ class ventas{
 		$c= new conectar();
 		$conexion=$c->conexion();
 
-		$fecha=date('Y-m-d');
 		$idventa=self::creaFolio();
 		$datos=$_SESSION['tablaComprasTemp'];
 		$idusuario=$_SESSION['iduser'];
@@ -51,14 +50,12 @@ class ventas{
 										id_cliente,
 										id_producto,
 										id_usuario,
-										precio,
-										fechaCompra)
+										precio)
 							values ('$idventa',
 									'$d[5]',
 									'$d[0]',
 									'$idusuario',
-									'$d[3]',
-									'$fecha')";
+									'$d[3]')";
 			$r=$r + $result=mysqli_query($conexion,$sql);
 		}
 
@@ -112,5 +109,3 @@ class ventas{
 		return $total;
 	}
 }
-
-?>

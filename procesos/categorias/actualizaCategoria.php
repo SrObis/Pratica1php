@@ -12,5 +12,3 @@
 	$obj= new categorias();
 
 	echo $obj->actualizaCategoria($datos);
-
- ?>
